@@ -1,23 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpideyCharge ⚡ | India EV Charging Planner</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="hero">
-      <nav class="topbar">
-        <a class="brand" href="#"><span>🕷️</span> SpideyCharge⚡</a>
-        <div class="nav-links">
-          <a href="#stations">Stations</a>
-          <a href="#planner">Planner</a>
-          <a href="#compatibility">Compatibility</a>
-        </div>
+@@ -21,62 +21,71 @@
       </nav>
       <section class="hero-grid">
         <div>
@@ -45,9 +26,14 @@
         <div class="section-heading">
           <p class="eyebrow">Google Maps ready</p>
           <h2>Charging stations across major Indian EV corridors</h2>
+          <p class="eyebrow">Full India map</p>
+          <h2>Charging stations, city coverage, and food hubs across India</h2>
           <p>
             Add your Google Maps API key in <code>app.js</code> to enable the full interactive map.
             Until then, the built-in station dataset powers comparisons and recommendations.
+            The built-in India map highlights major cities from North to South and East to West,
+            while station cards compare connectors, amenities, tariff, power output, and nearby food hubs.
+            Add your Google Maps API key in <code>app.js</code> to switch to live Google Maps rendering.
           </p>
         </div>
         <div class="map-layout">
@@ -55,6 +41,18 @@
             <div>
               <strong>Google Maps integration point</strong>
               <p>Markers will show chargers, food hubs, plug types, tariff, and power output.</p>
+          <div id="map" class="map-fallback" aria-label="India EV charging stations map">
+            <div class="india-map-shell">
+              <div class="map-copy">
+                <strong>India EV coverage map</strong>
+                <p>Tap a city marker to filter charging stations and nearby food hubs.</p>
+              </div>
+              <div class="india-silhouette" aria-hidden="true"></div>
+              <div id="mapPins" class="map-pins"></div>
+              <div class="map-legend">
+                <span><i class="legend-dot station-dot"></i>Charging + food hub</span>
+                <span><i class="legend-dot city-dot"></i>City coverage</span>
+              </div>
             </div>
           </div>
           <div class="filters-card">
@@ -80,46 +78,3 @@
           <label>
             Current battery (%)
             <input id="batteryLevel" type="number" min="1" max="100" value="32" />
-          </label>
-          <label>
-            Battery health (%)
-            <input id="batteryHealth" type="number" min="50" max="100" value="92" />
-          </label>
-          <label>
-            Desired range (km)
-            <input id="desiredRange" type="number" min="10" max="800" value="180" />
-          </label>
-          <button class="button primary" type="submit">Calculate best option</button>
-        </form>
-        <div id="recommendation" class="recommendation"></div>
-      </section>
-
-      <section id="compatibility" class="section compatibility">
-        <div class="section-heading">
-          <p class="eyebrow">TATA • Mahindra • MG • BYD • Hyundai • Suzuki-ready</p>
-          <h2>Charger compatibility and power-output comparison</h2>
-        </div>
-        <div class="table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Company / model</th>
-                <th>Battery</th>
-                <th>Compatible plugs</th>
-                <th>Recommended output</th>
-                <th>Best charging behavior</th>
-              </tr>
-            </thead>
-            <tbody id="compatibilityRows"></tbody>
-          </table>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <strong>SpideyCharge⚡</strong>
-      <span>Built for smarter EV travel in India.</span>
-    </footer>
-    <script src="app.js"></script>
-  </body>
-</html>
