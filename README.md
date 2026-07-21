@@ -1,2 +1,1 @@
-# SpideyCharge-
 SpideyCharge⚡
