@@ -1,0 +1,27 @@
+# SpideyCharge-
+SpideyCharge⚡
+# SpideyCharge⚡
+
+SpideyCharge is a static EV charging planner concept for India. It showcases charging stations, price comparison, nearby food hubs, charger compatibility, and battery-health-aware recommendations for popular Indian EVs.
+
+## Features
+
+- Google Maps JavaScript API integration point for pan-India station markers.
+- Station filtering by city and connector type.
+- Price, power-output, connector, and food-hub comparison cards.
+- Battery-health-aware charging calculator.
+- Compatibility table for TATA, Mahindra, MG, BYD, Hyundai, and Suzuki-ready EV profiles.
+
+## Run locally
+
+Open `index.html` in a browser, or serve the directory with any static file server:
+
+```bash
+python3 -m http.server 8000
+```
+
+Then visit `http://localhost:8000`.
+
+## Enable Google Maps
+
+Add a Google Maps JavaScript API key to `GOOGLE_MAPS_API_KEY` in `app.js`. The fallback panel is automatically replaced by a map with station markers when the key is present.
